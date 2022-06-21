@@ -1,5 +1,5 @@
 project: isobmff
-target: isobmff
+target: dump
 testsuite:
   - file://Example-Files/MOV1.MOV
 

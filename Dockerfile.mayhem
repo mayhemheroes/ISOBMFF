@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 ubuntu:22.04
+FROM --platform=linux/amd64 ubuntu:22.04 as builder
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential clang libc++-dev libc++abi-dev
@@ -6,3 +6,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential clang libc
 COPY . /repo
 WORKDIR /repo
 RUN g++ ISOBMFF-Dump/main.cpp /repo/ISOBMFF/source/* -I /repo/ISOBMFF/include/ -o dump
+
+RUN mkdir -p /deps
+RUN ldd /repo/dump | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+
+FROM ubuntu:22.04 as package
+
+COPY --from=builder /deps /deps
+COPY --from=builder /repo/dump /repo/dump
+ENV LD_LIBRARY_PATH=/deps
