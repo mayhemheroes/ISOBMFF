@@ -4,4 +4,4 @@ testsuite:
   - file://Example-Files/MOV1.MOV
 
 cmds:
-  - cmd: /repo/dump @@
+  - cmd: /dump @@
