@@ -5,3 +5,4 @@ testsuite:
 
 cmds:
   - cmd: /dump @@
+image: ghcr.io/rnshah9/playground:isobmff
