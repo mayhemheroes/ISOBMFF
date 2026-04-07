@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  REGISTRY: ghcr.io 
 
 jobs:
   build:
@@ -28,6 +27,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Convert image name to lowercase
+      run: |
+        echo "IMAGE_NAME=${env.github.repository,,}" >> ${GITHUB_ENV}
+    
     - name: Extract metadata (tags, labels) for Docker
       id: meta
       uses: docker/metadata-action@902fa8ec7d6ecbf8d84d538b9b233a880e428804
