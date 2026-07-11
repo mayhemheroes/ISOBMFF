@@ -1,0 +1,6 @@
+project: isobmff
+target: pad
+
+cmds:
+  - cmd: /mayhem/build/fuzz_Pad
+    libfuzzer: true
