@@ -891,7 +891,7 @@
 /* Begin XCBuildConfiguration section */
 		0515C8B81F2A71A8003B8594 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 057224132011201F00DC0502 /* Debug - ccache.xcconfig */;
+			baseConfigurationReference = 057224142011201F00DC0502 /* Debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/ISOBMFF/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -900,7 +900,7 @@
 		};
 		0515C8B91F2A71A8003B8594 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 057224112011201F00DC0502 /* Release - ccache.xcconfig */;
+			baseConfigurationReference = 057224152011201F00DC0502 /* Release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/ISOBMFF/include";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
